@@ -4,10 +4,12 @@
     <item android:id="@+id/menu_list"
         android:title="@string/list"
         android:visible="true"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        android:icon="@drawable/ic_list_white_24dp"/>
     <item android:id="@+id/menu_grid"
         android:title="@string/grid"
-        app:showAsAction="always"/>
+        app:showAsAction="always"
+        android:icon="@drawable/ic_view_module_white_24dp"/>
     <item android:id="@+id/menu_refresh"
         android:title="@string/refresh"
         app:showAsAction="never"/>
