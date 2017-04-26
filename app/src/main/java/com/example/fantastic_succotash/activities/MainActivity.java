@@ -15,6 +15,8 @@ import com.example.fantastic_succotash.R;
 import com.example.fantastic_succotash.adapters.NewsAdapter;
 import com.example.fantastic_succotash.data.News;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -26,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static String VIEW_STATE_SAVED = "grid_or_list";
 
-    private RecyclerView recyclerView;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     private NewsAdapter newsAdapter;
     private MockyService mockyService;
@@ -39,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
+
         if(savedInstanceState != null)
             gridLayout = savedInstanceState.getBoolean(VIEW_STATE_SAVED);
-
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://www.mocky.io")

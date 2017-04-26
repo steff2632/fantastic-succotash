@@ -12,6 +12,8 @@ import com.example.fantastic_succotash.data.News;
 import com.example.fantastic_succotash.views.SquareImageView;
 import com.squareup.picasso.Picasso;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by stefanmay on 27/10/2016.
  */
@@ -26,9 +28,9 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details_activity);
 
-        final SquareImageView image = (SquareImageView) findViewById(R.id.image);
-        TextView txtDescription = (TextView) findViewById(R.id.txt_desc);
-        TextView txtTitle = (TextView) findViewById(R.id.txt_title);
+        final SquareImageView image = ButterKnife.findById(this, R.id.image);
+        TextView txtDescription = ButterKnife.findById(this, R.id.txt_desc);
+        TextView txtTitle = ButterKnife.findById(this, R.id.txt_title);
 
         Resources resources = getResources();
         DENSITY_SCALE = resources.getDisplayMetrics().density;
